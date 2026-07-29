@@ -1,0 +1,2414 @@
+
+
+
+/* ==========================================================
+   GLOBAL RESET
+========================================================== */
+
+* {
+    box-sizing: border-box;
+    
+}
+
+@font-face {
+    font-family: 'codefont';
+    src: url('lionel-micro-nbp-font/LionelMicroNbp-gA25.ttf') format('truetype'),;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('lionel-micro-nbp-font/LionelMicroNbp-gA25.ttf') format('truetype'),;
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+
+    margin:0;
+    padding:0;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:"codefont", normal;
+
+    background:#fffaf7;
+
+    color:black;
+
+}
+
+
+
+/* ==========================================================
+   WEBSITE BACKGROUND
+========================================================== */
+
+#site-background {
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    background:#fffaf7;
+
+}
+
+
+
+/* ==========================================================
+   CRT MONITOR FRAME
+========================================================== */
+
+
+#desktop-monitor {
+
+    position:relative;
+
+    width:min(95vw, 1200px);
+
+    aspect-ratio:4 / 3;
+
+    background:#0012ff;
+
+    overflow:hidden;
+
+
+    border:
+
+        12px solid #202020;
+
+
+    box-shadow:
+
+        inset 0 0 0 6px #666,
+        inset 0 0 30px black,
+        0 20px 50px rgba(0,0,0,.6);
+
+}
+
+
+
+/* CRT curved glass */
+
+#desktop-monitor::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+
+    border-radius:20px;
+
+
+    
+    z-index:50;
+
+}
+
+
+
+/* ==========================================================
+   DESKTOP AREA
+========================================================== */
+
+
+#desktop {
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    
+    width:100%;
+    height:100%;
+
+    background:#0012ff;
+
+
+    overflow:hidden;
+
+    
+
+    
+
+}
+
+
+
+/* ==========================================================
+   SCANLINES
+========================================================== */
+
+
+#scanlines {
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:100;
+
+    pointer-events:none;
+
+
+    background:
+
+    repeating-linear-gradient(
+
+        to bottom,
+
+        rgba(134, 110, 110, 0.3) 2px,
+
+        rgba(255,255,255,.08) 1px,
+
+        transparent 1px,
+
+        transparent 0px
+
+    );
+
+
+    opacity: 10;
+
+
+
+}
+
+
+
+/* ==========================================================
+   DESKTOP ICONS
+========================================================== */
+
+
+#desktop-icons {
+
+    position:absolute;
+
+    top:20px;
+    left:20px;
+
+    cursor: pointer;
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(3,80px);
+
+
+    gap:25px 20px;
+
+}
+
+
+
+/* Icon button */
+
+.desktop-icon {
+
+    width:70px;
+    height:85px;
+
+
+    background:none;
+
+    border:none;
+
+    padding:0;
+
+
+    color:white;
+
+    font-family:"codefont", normal;
+
+    font-size:12px;
+
+    cursor:pointer;
+
+
+    
+
+
+}
+
+
+
+/* icon image */
+
+
+.desktop-icon img {
+
+    display:block;
+
+    margin:auto;
+
+
+    width:48px;
+    height:48px;
+
+
+    object-fit:contain;
+
+
+    margin-bottom:5px;
+
+}
+
+
+
+/* hover */
+
+.desktop-icon:hover {
+
+    background:
+
+    rgba(255,255,255,.2);
+
+
+    outline:
+
+    1px dotted white;
+
+    cursor: pointer;
+
+    
+
+}
+
+
+
+/* ==========================================================
+   WINDOW SYSTEM
+========================================================== */
+
+
+#window-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#window-layer .window {
+    pointer-events: auto;
+}
+
+
+
+/* hidden windows */
+
+
+.hidden {
+
+    display:none !important;
+
+}
+
+
+
+.window {
+
+    position:absolute;
+
+
+    width:500px;
+
+    height:400px;
+
+
+    background:#a6a6a6;
+
+
+    border:
+
+    3px solid #000;
+
+
+    box-shadow:
+
+
+    inset 2px 2px white,
+
+    inset -3px -3px #555,
+
+    8px 8px 0 rgba(0,0,0,.5);
+
+
+    overflow:hidden;
+
+
+    z-index:10;
+
+}
+
+
+
+/* random default placement */
+
+#about-window {
+
+    top:60px;
+    left:100px;
+
+}
+
+
+#music-window {
+
+    top:90px;
+    left:140px;
+
+}
+
+#noncanonmusic-window {
+
+    top:90px;
+    left:140px;
+
+}
+
+#archive-list {
+
+    top:90px;
+    left:140px;
+
+}
+
+
+#films-window {
+
+    top:70px;
+    left:200px;
+
+}
+
+
+
+/* ==========================================================
+   TITLE BAR
+========================================================== */
+
+
+.title-bar {
+
+
+    height:32px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+
+    background:#000fd6;
+
+
+    color:white;
+
+
+    padding-left:5px;
+
+
+    border-bottom:
+
+    2px solid black;
+
+
+    cursor:move;
+
+}
+
+
+
+.title-left {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+
+    font-size:20px;
+
+}
+
+
+
+.title-left img {
+
+    width:20px;
+    height:20px;
+
+}
+
+
+
+/* ==========================================================
+   WINDOW BUTTONS
+========================================================== */
+
+
+.title-buttons {
+
+    display:flex;
+
+    gap:3px;
+
+}
+
+
+
+.title-buttons button {
+
+
+    width:25px;
+
+    height:23px;
+
+
+    background:#ebebeb;
+
+
+    border:
+
+    2px solid white;
+
+
+    border-right-color:#555;
+
+    border-bottom-color:#555;
+
+
+    font-family:"codefont" normal;
+
+
+    font-weight:bold;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+.title-buttons button:active {
+
+
+    border:
+
+    2px solid #555;
+
+
+    border-right-color:white;
+
+    border-bottom-color:white;
+
+
+}
+
+/* ==========================================================
+   WINDOW CONTENT
+========================================================== */
+
+
+.window-content {
+
+    height:calc(100% - 32px);
+
+    padding:15px;
+
+
+    overflow:auto;
+
+
+    background:#a6a6a6;
+
+
+    color:black;
+
+
+    font-size:22px;
+
+
+}
+
+
+
+/* headings */
+
+
+.window-content h1,
+.window-content h2 {
+
+    margin-top:0;
+
+
+    font-weight:normal;
+
+
+    border-bottom:
+
+    2px solid black;
+
+
+    padding-bottom:5px;
+
+}
+
+
+
+.window-content p {
+
+    line-height:1.2;
+
+}
+
+
+
+/* ==========================================================
+   RETRO SCROLLBARS
+========================================================== */
+
+
+.window-content::-webkit-scrollbar {
+
+    width:18px;
+
+}
+
+
+
+.window-content::-webkit-scrollbar-track {
+
+    background:#777;
+
+}
+
+
+
+.window-content::-webkit-scrollbar-thumb {
+
+    background:#ddd;
+
+
+    border:
+
+    2px solid black;
+
+
+    box-shadow:
+
+    inset 2px 2px white,
+
+    inset -2px -2px #555;
+
+}
+
+
+
+
+
+/* ==========================================================
+   MUSIC LIBRARY
+========================================================== */
+
+
+#album-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(auto-fill,120px);
+
+
+    gap:20px;
+
+
+    padding:10px;
+
+
+}
+
+#album-grid,
+#noncanon-album-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, 120px);
+
+    gap: 20px;
+
+    padding: 10px;
+
+}
+
+
+/* Album cards */
+
+.album-card {
+
+
+    width:120px;
+
+
+    padding:5px;
+
+
+    background:#d0d0d0;
+
+
+    border:
+
+    2px solid black;
+
+
+    cursor:pointer;
+
+
+    text-align:center;
+
+
+
+    box-shadow:
+
+    inset 2px 2px white,
+
+    inset -2px -2px #555;
+
+
+}
+
+
+
+.album-card:hover {
+
+
+    background:white;
+
+
+}
+
+
+
+.album-card img {
+
+
+    width:100px;
+
+    height:100px;
+
+
+    object-fit:cover;
+
+
+    display:block;
+
+
+    margin:auto;
+
+
+}
+
+
+
+.album-card span {
+
+
+    display:block;
+
+
+    margin-top:5px;
+
+
+    font-size:18px;
+
+}
+
+.archive-year{
+
+    grid-column:1 / -1;
+
+    font-size:32px;
+
+    margin:20px 0 5px 0;
+
+    border-bottom:3px solid black;
+
+    font-weight:bold;
+
+}
+
+#albumarchive-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,120px);
+
+    gap:20px;
+
+}
+
+
+/* ==========================================================
+   GENERAL MEDIA GRIDS
+========================================================== */
+
+
+#film-grid,
+#book-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fill,140px);
+
+    gap:20px;
+
+}
+
+#gallery-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, 140px);
+
+    gap: 20px;
+
+}
+
+
+
+.media-card {
+
+
+    background:#d0d0d0;
+
+
+    border:
+
+    2px solid black;
+
+
+    padding:8px;
+
+
+    text-align:center;
+
+
+    cursor:pointer;
+
+
+    box-shadow:
+
+
+    inset 2px 2px white,
+
+    inset -2px -2px #555;
+
+}
+
+
+
+.media-card:hover {
+
+
+    background:white;
+
+}
+
+
+
+.media-card img {
+
+
+    width:120px;
+
+    height:120px;
+
+
+    object-fit:cover;
+
+}
+
+
+
+/* ==========================================================
+   NEWS FEED
+========================================================== */
+
+
+#news-feed {
+
+
+    display:flex;
+
+    flex-direction:column;
+
+
+    gap:15px;
+
+
+}
+
+
+
+.news-post {
+
+
+    background:#ddd;
+
+
+    border:
+
+    2px solid black;
+
+
+    padding:10px;
+
+
+    box-shadow:
+
+
+    inset 2px 2px white,
+
+    inset -2px -2px #555;
+
+
+}
+
+
+
+.news-post h3 {
+
+
+    margin:0 0 5px;
+
+
+}
+
+
+
+/* ==========================================================
+   LORE DATABASE
+========================================================== */
+
+
+#lore-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.lore-card{
+
+    display:flex;
+
+    gap:20px;
+
+    border:2px solid black;
+
+    padding:15px;
+
+    background:white;
+
+}
+
+.lore-poster{
+
+    width:180px;
+
+    height:240px;
+
+    object-fit:cover;
+
+    flex-shrink:0;
+
+}
+
+.lore-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.lore-year{
+
+    font-size:12px;
+
+    color:#555;
+
+    margin-bottom:6px;
+
+}
+
+.lore-info h2{
+
+    margin:0;
+
+    margin-bottom:10px;
+
+}
+
+.lore-info p{
+
+    margin:0;
+
+    line-height:1.5;
+
+}
+
+.anomaly-clickable-link{
+
+
+     cursor: pointer;
+
+}
+
+
+/* ==========================================================
+   ALBUM DETAILS WINDOW
+========================================================== */
+
+
+#album-details {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:15px;
+
+
+}
+
+
+
+.album-details-cover {
+
+
+    width:200px;
+
+    height:200px;
+
+
+    object-fit:cover;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   TASKBAR
+========================================================== */
+
+
+#taskbar {
+
+
+    position:absolute;
+
+
+    bottom:0;
+
+    
+
+
+    
+
+
+    height:45px;
+
+
+    background:#a6a6a6;
+
+
+    border-top:
+
+    3px solid white;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    padding:5px;
+
+
+    gap:10px;
+
+
+    z-index:200;
+
+
+
+    box-shadow:
+
+
+    inset 0 2px white,
+
+    inset 0 -3px #555;
+
+    width:100%;
+    left:0;
+
+
+}
+
+
+
+/* Start button */
+
+
+#start-button {
+
+
+    height:34px;
+
+
+    min-width:90px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:8px;
+
+
+    font-family:"MyCustomFont", normal;
+
+
+    font-size:18px;
+
+
+    background:#ddd;
+
+
+    border:
+
+    3px solid white;
+
+
+    border-right-color:#555;
+
+    border-bottom-color:#555;
+
+
+    cursor:pointer;
+  
+    
+
+}
+
+
+
+#start-button img {
+
+
+    width:22px;
+
+    height:22px;
+
+
+}
+
+
+
+/* pressed */
+
+#start-button:active {
+
+
+    border:
+
+    3px solid #555;
+
+
+    border-right-color:white;
+
+    border-bottom-color:white;
+
+
+}
+
+
+
+/* running programs */
+
+
+#taskbar-programs {
+
+
+    flex:1;
+
+
+    display:flex;
+
+
+    gap:5px;
+
+
+}
+
+
+
+.taskbar-button {
+
+
+    height:30px;
+
+
+    min-width:120px;
+
+
+    background:#ccc;
+
+
+    border:
+
+    2px solid black;
+
+
+    font-family:"codefont", normal;
+
+
+    font-size:18px;
+
+
+}
+
+
+
+/* ==========================================================
+   SYSTEM TRAY
+========================================================== */
+
+
+#system-tray {
+
+
+    height:32px;
+
+
+    padding:
+
+    5px 15px;
+
+
+    background:#ddd;
+
+
+    border:
+
+    2px solid black;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+}
+
+
+
+#clock {
+
+
+    font-size:20px;
+    font-family: "MyCustomFont";
+
+}
+
+
+
+/* ==========================================================
+   START MENU
+========================================================== */
+
+
+#start-menu {
+
+
+    position:absolute;
+
+
+    bottom:45px;
+
+
+    left:5px;
+
+
+    width:260px;
+
+
+    background:#a6a6a6;
+
+
+    border:
+
+    3px solid black;
+
+
+    box-shadow:
+
+
+    inset 2px 2px white,
+
+    inset -3px -3px #555,
+
+
+    10px 10px 0 rgba(0,0,0,.5);
+
+
+    z-index:500;
+
+
+
+}
+
+
+
+.start-header {
+
+
+    height:55px;
+
+
+    background:#000fd6;
+
+
+    color:white;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    padding-left:15px;
+
+
+}
+
+
+
+.start-header h2 {
+
+
+    font-size:30px;
+
+
+    margin:0;
+
+
+}
+
+
+
+#start-menu ul {
+
+
+    list-style:none;
+
+
+    padding:10px;
+
+    margin:0;
+
+
+}
+
+
+
+#start-menu li {
+
+
+    padding:8px;
+
+
+    font-size:24px;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+#start-menu li:hover {
+
+
+    background:#000fd6;
+
+    color:white;
+
+
+}
+
+/* ==========================================================
+   CRT SCREEN EFFECTS
+========================================================== */
+
+
+
+
+
+
+@keyframes screenOn {
+
+
+    0% {
+
+        transform:scaleY(.02);
+
+        opacity:0;
+
+    }
+
+
+    50% {
+
+        opacity:1;
+
+    }
+
+
+    100% {
+
+        transform:scaleY(1);
+
+    }
+
+
+}
+
+
+
+/* subtle screen glow */
+
+
+#desktop-monitor::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    pointer-events:none;
+
+
+    background:
+
+    linear-gradient(
+
+        rgba(255,255,255,0.03),
+
+        rgba(255,255,255,0.03)
+
+    );
+
+
+    z-index:40;
+
+
+}
+
+
+
+/* ==========================================================
+   WINDOW ANIMATION
+========================================================== */
+
+
+.window {
+
+
+    animation:
+
+    windowOpen .15s ease-out;
+
+
+}
+
+
+
+@keyframes windowOpen {
+
+
+    from {
+
+
+        transform:
+
+        scale(.85);
+
+
+        opacity:0;
+
+
+    }
+
+
+    to {
+
+
+        transform:
+
+        scale(1);
+
+
+        opacity:1;
+
+
+    }
+
+
+}
+
+
+
+/* ==========================================================
+   WINDOW FOCUS
+========================================================== */
+
+
+.window.active {
+
+
+    z-index:100;
+
+
+}
+
+
+
+/* ==========================================================
+   RETRO BUTTON STYLE
+========================================================== */
+
+
+
+
+
+
+button:hover {
+
+
+    filter:
+
+    brightness(1.1);
+
+
+}
+
+
+.desktop-icon:hover {
+
+
+    filter:
+
+    brightness(1.1);
+
+
+}
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+
+a {
+
+
+    color:#0000aa;
+
+
+    text-decoration:underline;
+
+
+}
+
+
+
+a:hover {
+
+
+    color:#000fd6;
+
+
+}
+
+
+
+/* ==========================================================
+   SELECTION STYLE
+========================================================== */
+
+
+::selection {
+
+
+    background:#000fd6;
+
+
+    color:white;
+
+
+}
+
+
+
+/* ==========================================================
+   BOOTUP SCREEN SUPPORT
+   (For future startup overlay)
+========================================================== */
+
+
+#boot-screen {
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:black;
+
+
+    color:white;
+
+
+    z-index:9999;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    flex-direction:column;
+
+
+    font-size:20px;
+
+
+}
+
+
+
+#boot-screen button {
+
+
+    margin-top:30px;
+
+
+    padding:10px 25px;
+
+
+    font-family:"MyCustomFont", normal;
+
+
+    font-size:15px;
+
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+
+/*
+    Desktop:
+    Keeps original 4:3 CRT monitor
+*/
+
+
+@media screen and (max-width:900px){
+
+
+    #desktop-monitor {
+
+
+        width:96vw;
+
+
+        border-width:8px;
+
+
+    }
+
+
+
+    #desktop-icons {
+
+
+        grid-template-columns:
+
+        repeat(3,65px);
+
+
+        gap:15px;
+
+
+        top:15px;
+
+        left:15px;
+
+
+    }
+
+
+
+    .desktop-icon {
+
+
+        width:60px;
+
+
+        height:75px;
+
+
+        font-size:16px;
+
+
+    }
+
+
+
+    .desktop-icon img {
+
+
+        width:40px;
+
+        height:40px;
+
+
+    }
+
+
+
+    .window {
+
+
+        width:75%;
+
+
+        height:70%;
+
+
+    }
+
+
+
+}
+
+
+
+/* ==========================================
+   TABLET ONLY
+========================================== */
+
+@media (min-width:769px) and (max-width:1024px){
+
+    .window{
+
+        left:50% !important;
+        top:50% !important;
+
+        transform:translate(-50%, -50%);
+
+        max-width:90%;
+        max-height:90%;
+
+    }
+
+}
+
+
+/* ==========================================================
+   PHONE MODE
+========================================================== */
+
+
+@media screen and (max-width:500px){
+
+
+
+    #site-background {
+
+
+        padding:3px;
+
+
+    }
+
+
+
+    #desktop-monitor {
+
+
+        width:100%;
+        position:relative;
+
+        aspect-ratio:
+
+        1080 / 1920;
+        overflow:hidden;
+
+    }
+
+
+
+    #desktop {
+
+        position:relative;
+        height:
+
+        calc(100% - 40px);
+         height:100%;
+
+    }
+
+
+
+    #desktop-icons {
+
+
+        grid-template-columns:
+
+        repeat(3,70px);
+
+        
+        gap:12px;
+
+
+    }
+
+
+
+    .desktop-icon {
+
+
+        width:65px;
+
+        height:80px;
+        font-size:14px;
+
+    }
+
+
+
+
+    .window {
+
+
+        width:
+
+        calc(100% - 30px);
+
+
+        height:
+
+        calc(100% - 80px);
+
+
+        top:15px !important;
+
+
+        left:15px !important;
+
+
+    }
+
+
+  #taskbar{
+
+        position:absolute;
+
+        bottom:0;
+
+        left:0;
+
+        width:100%;
+
+        height:45px;
+
+        display:flex;
+
+        align-items:center;
+
+        padding:5px;
+
+        z-index:200;
+
+    }
+
+    .title-bar {
+
+
+        height:30px;
+
+
+    }
+
+    .title-buttons .minimize,
+    .title-buttons .maximize{
+
+        display:none;
+
+    }
+
+    .title-buttons{
+
+        display:flex;
+        justify-content:flex-end;
+        align-items:center;
+        gap:0;
+
+    }
+
+
+
+    .window-content {
+
+
+        font-size:15px;
+
+
+    }
+
+
+
+    #taskbar {
+
+
+        height:40px;
+
+
+    }
+
+
+
+    #start-button {
+
+
+        min-width:50px;
+       font-size: 17px;
+
+    }
+
+
+
+    #taskbar-programs {
+
+
+        display:none;
+
+
+    }
+
+     
+    #boot-screen {
+
+        text-align: center;
+
+
+    }
+
+
+
+
+
+ .lore-card{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+    .lore-poster{
+
+        width:100%;
+
+        max-width:220px;
+
+        height:auto;
+
+    }
+
+    .lore-info{
+
+        align-items:center;
+
+        text-align:center;
+
+        width:100%;
+
+    }
+
+    .lore-year{
+
+        display:block;
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .lore-info h2{
+
+        text-align:center;
+
+    }
+
+    .lore-info p{
+
+        text-align:center;
+
+    }
+
+     #image-viewer-window{
+
+        width:95% !important;
+        height:75% !important;
+
+        left:50% !important;
+        top:50% !important;
+
+        transform:translate(-50%,-50%);
+
+        max-width:95%;
+        max-height:90%;
+
+    }
+
+    .image-viewer-content{
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        overflow:hidden;
+
+        padding:10px;
+
+    }
+
+    #viewer-image{
+
+        max-width:100%;
+        max-height:100%;
+
+        width:auto;
+        height:auto;
+
+        object-fit:contain;
+
+        display:block;
+
+        margin:auto;
+
+    }
+
+
+}
+
+
+/* ==========================================================
+   EXTRA WINDOWS XP DETAILS
+========================================================== */
+
+
+.window-content img {
+
+
+    border:
+
+    2px solid black;
+
+
+}
+
+
+
+hr {
+
+
+    border:
+
+    1px solid black;
+
+
+}
+
+
+
+/* fake desktop shortcut selection */
+
+
+.desktop-icon.selected {
+
+
+    background:
+
+    rgba(255,255,255,.3);
+
+
+    outline:
+
+    1px dotted white;
+
+
+}
+
+
+
+/* ==========================================================
+   PIXEL CURSOR SUPPORT
+========================================================== */
+
+
+body {
+
+
+    cursor:
+
+    default;
+
+
+}
+
+
+
+.desktop-icon,
+button,
+li {
+
+
+    cursor:
+
+    pointer;
+
+
+}
+
+
+
+/* ==========================================================
+   DISABLED SCROLL ON OUTSIDE PAGE
+========================================================== */
+
+
+body {
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+/* ==========================================================
+   FINAL COLOR VARIABLES
+   (easy future theme editing)
+========================================================== */
+
+
+:root {
+
+
+    --desktop-blue:#0012ff;
+
+
+    --window-gray:#a6a6a6;
+
+
+    --title-blue:#000fd6;
+
+
+    --button-gray:#ebebeb;
+
+
+    --page-background:#fffaf7;
+
+
+}
+
+
+/* ==========================================
+   IMAGE VIEWER
+========================================== */
+
+
+.image-viewer-content {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:black;
+
+}
+
+
+#viewer-image {
+
+    max-width:100%;
+
+    max-height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+}
+
+#image-viewer-window {
+
+    width:700px;
+
+    height:500px;
+
+    top:50px;
+
+    left:80px;
+
+}
+
+.gallery-year {
+
+    grid-column:1 / -1;
+
+    font-size:32px;
+
+    margin:20px 0 5px 0;
+
+    border-bottom:3px solid black;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+/* ==========================================
+   WINDOW RESIZE HANDLE
+========================================== */
+
+.resize-handle{
+
+    position:absolute;
+
+    width:16px;
+
+    height:16px;
+
+    right:0;
+
+    bottom:0;
+
+    cursor:nwse-resize;
+
+    z-index:500;
+
+}
+
+
+/* optional little corner lines */
+
+.resize-handle::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:3px;
+
+    bottom:3px;
+
+    width:10px;
+
+    height:10px;
+
+    background:
+        linear-gradient(135deg,
+        transparent 0,
+        transparent 35%,
+        white 35%,
+        white 45%,
+        transparent 45%,
+        transparent 60%,
+        white 60%,
+        white 70%,
+        transparent 70%);
+
+}
+
+.aboutme-image {
+
+  image-resolution: auto;
+  size: auto;
+  max-width: 300px;
+
+}
+
+
+
+/* ==========================================================
+   ARCHIVE MUSIC LIBRARY
+========================================================== */
+
+
+
+
+
+
+/* Album cards */
+
+.album-card {
+
+
+    width:120px;
+
+
+    padding:5px;
+
+
+    background:#d0d0d0;
+
+
+    border:
+
+    2px solid black;
+
+
+    cursor:pointer;
+
+
+    text-align:center;
+
+
+
+    box-shadow:
+
+    inset 2px 2px white,
+
+    inset -2px -2px #555;
+
+
+}
+
+
+
+.album-card:hover {
+
+
+    background:white;
+
+
+}
+
+
+
+.album-card img {
+
+
+    width:100px;
+
+    height:100px;
+
+
+    object-fit:cover;
+
+
+    display:block;
+
+
+    margin:auto;
+
+
+}
+
+
+
+.album-card span {
+
+
+    display:block;
+
+
+    margin-top:5px;
+
+
+    font-size:18px;
+
+}
+
