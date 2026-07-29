@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Square Bot</title>
+    <link rel="icon" type="image/x-icon" href="square bot icon for website.png">
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- font -->
+    <link href="ibm-plex-mono-font/IbmPlexMono-7L4D.otf" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="site-background">
+
+    <!-- ==========================================================
+         BOOTUP OS MONITOR
+    =========================================================== -->
+
+    <main id="desktop-monitor">
+
+        <!-- Scanlines -->
+        <div id="scanlines"></div>
+
+        <!-- Desktop Wallpaper -->
+        <div id="desktop">
+
+            <!-- ===========================================
+                 DESKTOP ICONS
+            ============================================ -->
+
+            <div id="desktop-icons">
+
+                <button class="desktop-icon" data-window="about-window">
+                    <img src="icons-6.png.png" alt="About Me">
+                    <span>About</span>
+                </button>
+
+                <button class="desktop-icon" data-window="music-window">
+                    <img src="other icons -7.png.png" alt="My Music">
+                    <span>Music</span>
+                </button>
+
+                <a href="https://open.spotify.com/artist/5qcNKP2dsnsEbU7a4JaSPX?si=ITsL4EPLTzq9J6avxmiBdg">
+                <button class="desktop-icon">
+                    <img src="icons-13.png.png" alt="My Spotify">
+                    <span>Spotify</span>
+                </button></a>
+
+                <a href="https://music.apple.come/us/artist/square-bot/1229736783">
+                <button class="desktop-icon" data-window="games-window">
+                    <img src="icons-15.png.png" alt="My Apple Music">
+                    <span>Apple</span>
+                </button></a>
+
+                <a href="https://square-bot.bandcamp.com/music">
+                <button class="desktop-icon">
+                    <img src="icons-14.png.png" alt="My Bandcamp">
+                    <span>Bandcamp</span>
+                </button></a>
+
+                <button class="desktop-icon" data-window="gallery-window">
+                    <img src="icons-3.png.png" alt="Photo Gallery">
+                    <span>Gallery</span>
+                </button>
+
+                <button class="desktop-icon" data-window="news-window">
+                    <img src="icons-22.png.png" alt="Updates">
+                    <span>News</span>
+                </button>
+
+                <button class="desktop-icon" data-window="archive-list">
+                    <img src="New Piskel-2.png (1).png" alt="Archived Music">
+                    <span>Archived</span>
+                </button>
+                
+                <button class="desktop-icon" data-window="lore-window">
+                    <img src="paper icon png.png" alt="Lore Events">
+                    <span>Lore</span>
+                </button>
+
+                
+
+            </div>
+<!-- ===============================================
+             TASKBAR
+================================================ -->
+
+         <footer id="taskbar">
+
+            <button id="start-button">
+
+                <img src="icons-24.png.png">
+
+                <span>This PC</span>
+
+            </button>
+
+            <div id="taskbar-programs">
+
+            </div>
+
+            <div id="system-tray">
+
+                <span id="clock">
+                    12:00 AM
+                </span>
+
+            </div>
+
+         </footer>
+
+    
+         <div id="start-menu" class="hidden">
+
+         <div class="start-header" class="title-buttons">
+
+         <h2>This PC</h2> 
+        
+
+         </div>
+         <ul>
+
+        <li data-window="about-window">About</li>
+
+        <li data-window="music-window">Music</li>
+
+        <li data-window="archive-list">Archived</li>
+
+        <li data-window="lore-window">Lore</li>
+
+        <li class="hidden" data-window="settings-window">Settings</li>
+        <li><a href="https://linktr.ee/squarebot">Links</a></li>
+
+        <li data-window="gallery-window">Gallery</li>
+
+        <li data-window="news-window">News</li>
+
+        
+
+         </ul>
+        </div>
+            <!-- ===========================================
+                 WINDOW LAYER
+            ============================================ -->
+
+            <div id="window-layer">
+
+<!-- =======================================================
+ABOUT WINDOW
+======================================================= -->
+
+<div class="window hidden" id="about-window">
+
+    <div class="title-bar">
+
+        <div class="title-left">
+
+            <img src="icons-6.png.png">
+
+            <span>Who Is Square Bot</span>
+
+        </div>
+
+        <div class="title-buttons">
+
+            <button class="minimize">_</button>
+            <button class="maximize">□</button>
+            <button class="close">✕</button>
+
+        </div>
+
+    </div>
+
+    <div class="window-content">
+
+        <img src="2026 sb pic.jpg" class="aboutme-image">
+        
+        <h1>Square Bot</h1>
+
+        <p>
+
+            Rooted in Abstract Electronic and Experimental IDM, 
+            Square Bot is a boundary-pushing indie artist existing somewhere between man and machine, a half-human, half-robotic presence.
+            Since 2017, Square Bot has served as a limitless creative outlet for the creator behind the helmet, 
+            refusing to stay confined within traditional genre lines.
+
+            More than a music project, Square Bot is an evolving identity where experimentation comes first and creative freedom has no restrictions. 
+            The result is music that can shift from one genre to another while still carrying the unmistakable electronic fingerprint that defines Square Bot.
+
+        </p>
+
+    </div>
+  <div class="resize-handle"></div>
+</div>
+
+<!-- =======================================================
+MUSIC WINDOW
+======================================================= -->
+
+<div class="window hidden" id="music-window">
+
+    <div class="title-bar">
+
+        <div class="title-left">
+
+            <img src="other icons -7.png.png">
+
+            <span>My Music</span>
+
+        </div>
+
+        <div class="title-buttons">
+
+            <button class="minimize">_</button>
+            <button class="maximize">□</button>
+            <button class="close">✕</button>
+
+        </div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>All Main/Canon Releases</h2>
+        <p>Sorted: Newest to Oldest</p>
+
+        <div class="music-filters">
+
+ <p class="hidden">Filters</p>
+ <select id="year-filter" class="hidden">
+
+ <option value="">
+ Year
+ </option>
+
+ </select>
+
+
+
+ <select id="genre-filter" class="hidden">
+
+ <option value="">
+ Genre
+ 
+ </option>
+
+ </select>
+
+
+
+ <select id="tag-filter" class="hidden">
+
+ <option value="">
+ Tag
+ 
+
+ </option>
+
+ </select>
+
+
+ </div>
+ <button onclick="openWindow('noncanonmusic-window')" > Non-Canon Music </button>
+
+        <div id="album-grid">
+
+            <!-- Album Cards generated by JavaScript -->
+
+        </div>
+
+    </div>
+  <div class="resize-handle"></div>
+</div>
+
+
+<!-- =======================================================
+ARCHIVED MUSIC WINDOW
+======================================================= -->
+
+<div class="window hidden" id="archive-list"  > 
+
+    <div class="title-bar">
+
+        <div class="title-left">
+
+            <img src="New Piskel-2.png (1).png">
+
+            <span>Archived Music</span>
+
+        </div>
+
+        <div class="title-buttons">
+
+            <button class="minimize">_</button>
+            <button class="maximize">□</button>
+            <button class="close">✕</button>
+
+        </div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>Archived Music Library</h2>
+        <p>THESE ARE THE RELEASES ERASED IN THE <a class="anomaly-clickable-link" onclick="openWindow('lore-window')">ANOMALY</a> EVENT</p>
+        <span>Note: any release that is attached to Square Bot between 2017-2021 are subject to this lore event.<br>
+            Releases that are listed as "Main Releases" or "Standalone Releases" are not subject to this lore event.
+        </span>
+        <p>Sorted By: Year</p>
+        
+        
+        
+
+        <div id="albumarchive-grid">
+
+            <!-- Album Cards generated by JavaScript -->
+
+        </div>
+
+    </div>
+  <div class="resize-handle"></div>
+</div>
+
+<!-- =======================================================
+non canon MUSIC WINDOW
+======================================================= -->
+
+<div class="window hidden" id="noncanonmusic-window"  > 
+
+    <div class="title-bar">
+
+        <div class="title-left">
+
+            <img src="icons-2.png.png">
+
+            <span>Non-Canon/Standalone Music</span>
+
+        </div>
+
+        <div class="title-buttons">
+
+            <button class="minimize">_</button>
+            <button class="maximize">□</button>
+            <button class="close">✕</button>
+
+        </div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>Standalone Music Library</h2>
+        <p>Sorted: Newest to Oldest</p>
+        
+
+        <div id="noncanon-album-grid">
+
+            <!-- Album Cards generated by JavaScript -->
+
+        </div>
+
+    </div>
+  <div class="resize-handle"></div>
+</div>
+
+<!-- =======================================================
+noncanon ALBUM DETAILS WINDOW
+======================================================= -->
+
+<div class="window hidden" id="noncanonalbum-details-window">
+
+    <div class="title-bar">
+
+        <div class="title-left">
+
+            
+
+            <span>Album Information</span>
+
+        </div>
+
+        <div class="title-buttons">
+
+            <button class="minimize">_</button>
+            <button class="maximize">□</button>
+            <button class="close">✕</button>
+
+        </div>
+
+    </div>
+
+    <div class="window-content">
+
+        <div id="noncanon-album-details">
+
+            <!-- Filled by JavaScript -->
+
+        </div>
+
+    </div>
+ <div class="resize-handle"></div>
+</div>
+
+            </div>
+  
+        </div>
+
+<!-- =======================================================
+FILMS
+======================================================= -->
+
+<div class="window hidden" id="films-window">
+
+    <div class="title-bar">
+
+        <div class="title-left">
+
+            <img src="assets/icons/films.png">
+
+            <span>Films</span>
+
+        </div>
+
+        <div class="title-buttons">
+
+            <button class="minimize">_</button>
+            <button class="maximize">□</button>
+            <button class="close">✕</button>
+
+        </div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>Films</h2>
+
+        <div id="film-grid">
+
+        </div>
+
+    </div>
+   <div class="resize-handle"></div>
+</div>
+
+<!-- =======================================================
+Settings
+======================================================= -->
+
+<div class="window hidden" id="settings-window">
+
+    <div class="title-bar">
+
+        <div class="title-left">
+
+            <img src="assets/icons/books.png">
+
+            <span>Settings</span>
+
+        </div>
+
+        <div class="title-buttons">
+
+            <button class="minimize">_</button>
+            <button class="maximize">□</button>
+            <button class="close">✕</button>
+
+        </div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>Settings</h2>
+
+        <p>No Settings Panel Right Now.</p>
+
+    </div>
+  <div class="resize-handle"></div>
+</div>
+
+<!-- =======================================================
+GALLERY
+======================================================= -->
+
+<div class="window hidden" id="gallery-window">
+
+    <div class="title-bar">
+
+        <div class="title-left">
+
+            <img src="icons-3.png.png">
+
+            <span>Gallery</span>
+
+        </div>
+
+        <div class="title-buttons">
+
+            <button class="minimize">_</button>
+            <button class="maximize">□</button>
+            <button class="close">✕</button>
+
+        </div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>Gallery</h2>
+        <p>Sorted By: Year (images random order)</p>
+
+        <div id="gallery-grid">
+
+            <!-- Generated by JavaScript -->
+
+        </div>
+
+    </div>
+   <div class="resize-handle"></div>
+</div>
+
+
+<div class="window hidden" id="image-viewer-window">
+
+    <div class="title-bar">
+
+        <div class="title-left">
+
+            <span>Image Viewer</span>
+
+        </div>
+
+
+        <div class="title-buttons">
+
+            <button class="minimize">_</button>
+            <button class="maximize">□</button>
+            <button class="close">✕</button>
+
+        </div>
+
+    </div>
+
+
+    <div class="window-content image-viewer-content">
+
+        <img id="viewer-image" src="">
+
+    </div>
+
+
+    <div class="resize-handle"></div>
+
+</div>
+
+<!-- =======================================================
+NEWS
+======================================================= -->
+
+<div class="window hidden" id="news-window">
+
+    <div class="title-bar">
+
+        <div class="title-left">
+
+            <img src="icons-22.png.png">
+
+            <span>News Feed</span>
+
+        </div>
+
+        <div class="title-buttons">
+
+            <button class="minimize">_</button>
+            <button class="maximize">□</button>
+            <button class="close">✕</button>
+
+        </div>
+
+    </div>
+
+    <div class="window-content">
+        <p>No News Right Now.</p>
+        <div id="news-feed">
+
+            <!-- Generated by JavaScript -->
+
+        </div>
+
+    </div>
+ <div class="resize-handle"></div>
+</div>
+
+<!-- =======================================================
+LORE
+======================================================= -->
+
+<div class="window hidden" id="lore-window">
+
+    <div class="title-bar">
+
+        <div class="title-left">
+            <img src="paper icon png.png">
+            <span>Lore Database</span>
+        </div>
+
+        <div class="title-buttons">
+            <button class="minimize">_</button>
+            <button class="maximize">□</button>
+            <button class="close">✕</button>
+        </div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>Lore Events</h2>
+
+        
+
+        <div id="lore-list"></div>
+
+    </div>
+
+    <div class="resize-handle"></div>
+
+</div>
+
+<!-- =======================================================
+CONTACT
+======================================================= -->
+
+<div class="window hidden" id="contact-window">
+
+    <div class="title-bar">
+
+        <div class="title-left">
+
+            <img src="assets/icons/contact.png">
+
+            <span>Contact</span>
+
+        </div>
+
+        <div class="title-buttons">
+
+            <button class="minimize">_</button>
+            <button class="maximize">□</button>
+            <button class="close">✕</button>
+
+        </div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>Contact</h2>
+
+        <p>Email:</p>
+
+        <p>Bandcamp:</p>
+
+        <p>YouTube:</p>
+
+    </div>
+  <div class="resize-handle"></div>
+</div>
+
+<!-- =======================================================
+ALBUM DETAILS WINDOW
+======================================================= -->
+
+<div class="window hidden" id="album-window">
+
+    <div class="title-bar">
+
+        <div class="title-left">
+
+            
+
+            <span>Album Information</span>
+
+        </div>
+
+        <div class="title-buttons">
+
+            <button class="minimize">_</button>
+            <button class="maximize">□</button>
+            <button class="close">✕</button>
+
+        </div>
+
+    </div>
+
+    <div class="window-content">
+
+        <div id="album-details">
+
+            <!-- Filled by JavaScript -->
+
+        </div>
+
+    </div>
+ <div class="resize-handle"></div>
+</div>
+
+            </div>
+  
+        </div>
+
+
+ 
+     
+
+     
+
+      </div>
+    
+    
+      </div>    
+     
+    </main>
+
+
+
+
+
+<script src="index.js"></script>
+
+</body>
+</html>
